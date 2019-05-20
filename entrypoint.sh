@@ -77,28 +77,5 @@ function validateRepository() {
     IFS="$OLDIFS"
 }
 
-# Parameter check
-if [ $# -eq 0 ]; then
-    echo_err "validate-commit: You should use [dirname], 'Commit message' as parameter or '-' to read from stdin."
-    echo_debug "end"
-    exit 1
-fi
-
-# Check parameter
-if [ "$1" == "-" ]; then
-    # Generate HTML from stdin
-    commitMessage=$(while IFS= read -r line; do
-        printf '%s\n' "$line"
-    done)
-    validateCommit "------- $commitMessage"
-    echo_debug "Commit message OK"
-else
-    if [ -d "$1" ]; then
-        validateRepository $1
-    else
-        commitMessage=$1
-        validateCommit "------- $commitMessage"
-        echo_debug "Commit message OK"
-    fi
-fi
+validateRepository .
 echo_debug "end"
