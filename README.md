@@ -6,27 +6,15 @@ Its a part of the Docker Command series
 
 ## Usage
 
-Execute the following within your repository folder:
+Execute the following:
 
-- Using Bash:
-  - `./entrypoint.sh [git-repository-dir]`
-  - `./entrypoint.sh "Commit message"`
-  - `echo "Commit message" | ./entrypoint.sh -`
-- Using Docker:
-  - `docker run --rm -v [git-repository-dir]:/workspace kairops/dc-commit-validator .`
-  - `docker run --rm kairops/dc-commit-validator "Commit message"`
-  - `echo "Commit message" | docker run --rm kairops/dc-commit-validator -`
-- Using docker-command-launcher:
-  - `kd git-changelog-generator [git-repository-dir]`
-  - `kd git-changelog-generator "Commit message"`
-  - `echo "Commit message" | kd git-changelog-generator -`
+- Using Bash, withinh your repository folder: `cd [git-repository-dir]; [/path/to/commit-validator]/entrypoint.sh`
+- Using Docker: `docker run --rm -v [git-repository-dir]:/workspace kairops/dc-commit-validator .`
+- Using docker-command-launcher:`kd git-changelog-generator [git-repository-dir]`
 
-The script will check if the message(s) of the unreleased commit(s) (or the commit message passed as parameter) fulfill the rules of [Git Changelog Generator](https://github.com/kairops/dc-git-changelog-generator)
+The script will check if the commit message(s) of your repository corresponding to the unreleased commit(s) fulfill the rules of [Git Changelog Generator](https://github.com/kairops/dc-git-changelog-generator)
 
-- If you pass a existent directory of the filesystem in the first parameter, the script expect to find a git repository and will check all the messages of all unreleased commit.
-- If you pass a commit message as a text, the script will check it.
-
-In both cases, it will return 0 if the message (or messages) fulfill the rules, and 1 in other case.
+It will return 0 if the the whole commit messages fulfill the rules, and 1 if at least one commit does not.
 
 ## Considerations
 
