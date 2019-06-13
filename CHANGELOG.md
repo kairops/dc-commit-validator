@@ -1,10 +1,27 @@
-* Initial import ([252a43f](https://github.com:kairops/dc-commit-validator/commit/252a43f))
+# Changelog
+
+## v0.1.1 (2019-06-13)
+
+### Build
+
+* Update Auto Release Log adding v0.1.1 info with JPL ([638645b](https://github.com/kairops/dc-commit-validator/commit/638645b))
+* Update to jpl v3.1.6 and add auto-release stage ([fc72018](https://github.com/kairops/dc-commit-validator/commit/fc72018))
+
+## v0.1.0 (2019-05-20)
+
+### New
+
+* Initial import ([252a43f](https://github.com/kairops/dc-commit-validator/commit/252a43f))
 
 ### Upgrade
 
-* Use always with a git repository ([f4bad2f](https://github.com:kairops/dc-commit-validator/commit/f4bad2f))
+* Use always with a git repository ([f4bad2f](https://github.com/kairops/dc-commit-validator/commit/f4bad2f))
+
+### Build
+
+* Update CHANGELOG.md to v0.1.0 with Red Panda JPL ([0235659](https://github.com/kairops/dc-commit-validator/commit/0235659))
 
 ### Docs
 
-* Update main Readme file ([661a398](https://github.com:kairops/dc-commit-validator/commit/661a398))
+* Update main Readme file ([661a398](https://github.com/kairops/dc-commit-validator/commit/661a398))
 
