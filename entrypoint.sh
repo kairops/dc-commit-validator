@@ -56,7 +56,7 @@ function validateCommit() {
 }
 
 function validateRepository() {
-    local lastTag=$(git describe --abbrev=0 --tags 2> /dev/null || echo '')
+    local lastTag=$(git describe --tags `git rev-list --tags --max-count=1` 2> /dev/null || echo '')
     if [ "$lastTag" == "" ]; then
         local commitRange="HEAD"
     else
