@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.1.2 (2019-06-19)
+
+### Fix
+
+* Get the last release number in the right form ([145eb46](https://github.com/kairops/dc-commit-validator/commit/145eb46))
+
+### Build
+
+* Update Auto Release Log adding v0.1.2 info with JPL ([565b493](https://github.com/kairops/dc-commit-validator/commit/565b493))
+
+### Docs
+
+* Generate v0.1.1 changelog with JPL ([b240ba6](https://github.com/kairops/dc-commit-validator/commit/b240ba6))
+
 ## v0.1.1 (2019-06-13)
 
 ### Build
