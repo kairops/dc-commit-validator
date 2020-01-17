@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.1.3 (2020-01-17)
+
+### Build
+
+* Update Auto Release Log adding v0.1.3 info with JPL ([d5c3d6b](https://github.com/kairops/dc-commit-validator/commit/d5c3d6b))
+
+### Docs
+
+* Generate v0.1.2 changelog with JPL ([98f56ba](https://github.com/kairops/dc-commit-validator/commit/98f56ba))
+
 ## v0.1.2 (2019-06-19)
 
 ### Fix
