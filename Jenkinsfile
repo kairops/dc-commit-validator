@@ -15,7 +15,7 @@ def buildAndPublishDockerImage(nextReleaseNumber = "") {
         nextReleaseNumber = sh (script: "kd get-next-release-number .", returnStdout: true).trim().substring(1)
     }
     docker.withRegistry("", 'cikairos-docker-credentials') {
-        def customImage = docker.build("teecke/${cfg.projectName}:${nextReleaseNumber}", "--pull --no-cache .")
+        def customImage = docker.build("kairops/${cfg.projectName}:${nextReleaseNumber}", "--pull --no-cache .")
         customImage.push()
         if (nextReleaseNumber != "beta") {
             customImage.push('latest')
