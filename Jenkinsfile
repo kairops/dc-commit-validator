@@ -3,7 +3,7 @@
 @Library('github.com/teecke/jenkins-pipeline-library@v3.4.1') _
 
 // Initialize global config
-cfg = jplConfig('dc-commit-validator', 'bash', '', [email: env.CIKAIROS_NOTIFY_EMAIL_TARGETS)
+cfg = jplConfig('dc-commit-validator', 'bash', '', [email: env.CIKAIROS_NOTIFY_EMAIL_TARGETS])
 
 /**
  * Build and publish docker images
