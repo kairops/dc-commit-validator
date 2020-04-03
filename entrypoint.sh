@@ -19,7 +19,7 @@ function echo_err () {
 }
 function echo_debug () {
     if [ "$KD_DEBUG" == "1" ]; then
-        echo >&2 ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") $KD_NAME: $@"
+        echo >&2 ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") $KD_NAME: " "$@"
     fi
 }
 KD_NAME="commit-validator"
@@ -44,11 +44,10 @@ function getNumberByType() {
 function validateCommit() {
     local commit=$1
     echo_debug "Checking commit $commit"
-    type=$(echo $commit|awk '{print $2}')
-    message=$(echo $commit|awk '{ print substr($0, index($0,$3)) }')
-    number=$(getNumberByType $type)
-    if [ $number -eq -1 ]; then
-        echo_err "Error: Commit messager does not fulfill rules in commit '${commit}'"
+    type=$(echo "$commit"|awk '{print $2}')
+    number=$(getNumberByType "$type")
+    if [ "$number" -eq -1 ]; then
+        echo_err "Error: Commit message does not fulfill rules in commit '${commit}'"
         echo "$commitList"
         echo_debug "end"
         exit 1
@@ -56,7 +55,9 @@ function validateCommit() {
 }
 
 function validateRepository() {
-    local lastTag=$(git describe --tags `git rev-list --tags --max-count=1` 2> /dev/null || echo '')
+    local lastTag
+
+    lastTag=$(git describe --abbrev=0 2> /dev/null || echo '')
     if [ "$lastTag" == "" ]; then
         local commitRange="HEAD"
     else
@@ -68,10 +69,10 @@ function validateRepository() {
     # Initalizacion
     OLDIFS="$IFS"
     IFS=$'\n' # bash specific
-    commitList=$(git log ${commitRange} --no-merges --pretty=format:"%h %s")
+    commitList=$(git log "${commitRange}" --no-merges --pretty=format:"%h %s")
     for commit in $commitList
     do
-        validateCommit $commit
+        validateCommit "${commit}"
     done
     echo_debug "All commits OK"
     IFS="$OLDIFS"
