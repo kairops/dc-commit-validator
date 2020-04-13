@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please visit https://github.com/tpbtools/dc-commit-validator/settings
+
 # Docker Command: Commit Validator
 
 Simply Commit Message Validator written in BASH
