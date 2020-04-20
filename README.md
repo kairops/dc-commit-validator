@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please visit https://github.com/tpbtools/dc-commit-validator/settings
+Please visit https://github.com/ayudadigital/dc-commit-validator
 
 # Docker Command: Commit Validator
 
